@@ -34,6 +34,10 @@ Route::prefix('v1')->middleware('auth')->group(function () {
         Route::patch('', [App\Http\Controllers\V1\LoketController::class, 'update'])->name('v1.loket.update');
         Route::delete('', [App\Http\Controllers\V1\LoketController::class, 'destroy'])->name('v1.loket.destroy');
     });
+
+    Route::prefix('pendaftaran')->middleware('auth')->group(function () {
+        Route::get('', [App\Http\Controllers\V1\PendaftaranController::class, 'index'])->name('v1.pendaftaran');
+    });
 });
 
 
